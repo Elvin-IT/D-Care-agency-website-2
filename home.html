@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-care Agency - Your Trusted Healthcare Partner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6A0DAD',
+                        secondary: '#E6E6FA',
+                        accent: '#FFFFFF'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(106, 13, 173, 0.7), rgba(106, 13, 173, 0.7)), url('https://images.unsplash.com/photo-1519494026894-82ae04b16ecc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px -5px rgba(106, 13, 173, 0.2);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .contact-form {
+            box-shadow: 0 10px 25px -5px rgba(106, 13, 173, 0.1);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        .nav-link {
+            position: relative;
+            color: white;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #6A0DAD;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.scrolled {
+        color: #6A0DAD !important;
+    }
+        
+        .active::after {
+            width: 100%;
+        }
+
+        .client-image {
+        width: 100px; /* Set the desired width */
+        height: 100px; /* Set the desired height */
+        border-radius: 50%; /* Makes the image round */
+        object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-primary">
+                <span class="flex items-center">
+                    <i class="fas fa-heartbeat text-primary mr-2"></i>
+                    D-care Agency
+                </span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link font-medium active">Home</a>
+                <a href="#about" class="nav-link font-medium">About Us</a>
+                <a href="#services" class="nav-link font-medium">Services</a>
+                <a href="#testimonials" class="nav-link font-medium">Testimonials</a>
+                <a href="#blog" class="nav-link font-medium">Blog</a>
+                <a href="#contact" class="nav-link font-medium">Contact Us</a>
+            </nav>
+            <button class="md:hidden text-primary">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-16">
+        <div class="container mx-auto px-4 py-20 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Compassionate Care, Comprehensive Solutions
+            </h1>
+            <p class="text-xl text-accent mb-10 max-w-2xl mx-auto">
+                Your health is our priority. We provide personalized healthcare services tailored to your needs.
+            </p>
+            <a href="#services" class="bg-primary hover:bg-purple-800 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-block">
+                Get Started
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">About D-care Agency</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <p class="text-lg mb-6">
+                        At D-care Agency, we are dedicated to providing exceptional healthcare services that enhance the quality of life for our clients. Our mission is to deliver compassionate, professional care in the comfort of your own home.
+                    </p>
+                    <p class="text-lg mb-6">
+                        With years of experience in the healthcare industry, our team of certified professionals is committed to maintaining the highest standards of care. We believe in treating each client as part of our extended family, ensuring personalized attention and support.
+                    </p>
+                    <p class="text-lg">
+                        Our core values include integrity, compassion, professionalism, and community service. We strive to make a positive difference in the lives of those we serve while building lasting relationships based on trust and respect.
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="img\1.jpg" alt="Community Healthcare" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Services</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg max-w-2xl mx-auto">
+                    We offer a comprehensive range of healthcare services designed to meet your individual needs and promote your well-being.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-secondary p-8 rounded-xl text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-home text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Home Healthcare</h3>
+                    <p>Professional care in the comfort of your home. Our caregivers provide assistance with daily activities, medication reminders, and companionship.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card bg-secondary p-8 rounded-xl text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user-md text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Physical Therapy</h3>
+                    <p>Specialized rehabilitation services to help you regain strength, mobility, and independence after injury or surgery.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card bg-secondary p-8 rounded-xl text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-stethoscope text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Nursing Services</h3>
+                    <p>Comprehensive nursing care provided by licensed professionals for complex medical conditions and post-hospital care.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card bg-secondary p-8 rounded-xl text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-comments text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Medical Consultation</h3>
+                    <p>Expert medical advice and guidance from our team of specialists to help you make informed healthcare decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Testimonials Section -->
+<section id="testimonials" class="py-20 bg-secondary">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">What Our Clients Say</h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                <div class="text-primary mb-4">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="italic mb-6">
+                    "The care my mother received was exceptional. The nurses were professional, compassionate, and truly cared about her well-being. I couldn't be more grateful for their service."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="img/image1.jpg" alt="Image 1" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Sarah Johnson</h4>
+                        <p class="text-sm">Family Member</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                <div class="text-primary mb-4">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="italic mb-6">
+                    "After my surgery, the physical therapy team helped me regain my strength and mobility faster than I expected. Their expertise and encouragement made all the difference in my recovery."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="img/image2.jpg" alt="Image 2" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Michael Thompson</h4>
+                        <p class="text-sm">Patient</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                <div class="text-primary mb-4">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="italic mb-6">
+                    "The home healthcare services provided by D-care Agency allowed my father to maintain his independence while receiving the medical attention he needed. The staff was always punctual and professional."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="img/image3.jpg" alt="Image 3" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-bold">John Mo</h4>
+                        <p class="text-sm">Patient</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Latest Insights</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg max-w-2xl mx-auto">
+                    Stay informed with our latest health tips, industry news, and agency updates.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                    <img src="img\2.jpg" alt="Health Tips" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">5 Essential Tips for Healthy Aging</h3>
+                        <p class="mb-4">Discover simple yet effective ways to maintain your health and vitality as you age.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            Read More
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                    <img src="img\3.jpg" alt="Home Care" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Benefits of Home Healthcare Services</h3>
+                        <p class="mb-4">Why home healthcare is becoming the preferred choice for many families.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            Read More
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                    <img src="img\4.jpg" alt="Recovery" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Post-Surgery Recovery: What to Expect</h3>
+                        <p class="mb-4">A guide to understanding the recovery process after common surgical procedures.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            Read More
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-10 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Subscribe to Our Newsletter</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg mb-8">
+                    Get the latest health tips, news, and updates delivered straight to your inbox.
+                </p>
+                <form class="flex flex-col md:flex-row items-center justify-center gap-4">
+                    <input type="email" placeholder="Enter your email address" class="w-full md:w-2/3 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                    <button type="submit" class="bg-primary hover:bg-purple-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300 w-full md:w-auto">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Get in Touch</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg max-w-2xl mx-auto">
+                    Have questions or want to schedule a service? Reach out to us today.
+                </p>
+            </div>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <div class="contact-form bg-white rounded-xl p-8 shadow-lg">
+                        <form>
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                            </div>
+                            <button type="submit" class="bg-primary hover:bg-purple-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300 w-full">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-10">
+                    <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                        <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-primary mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Our Location</h4>
+                                    <p>123 Healthcare Avenue, Medical District<br>City, State 12345</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-primary mr-4 mt-1">
+                                    <i class="fas fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Phone Number</h4>
+                                    <p>(123) 456-7890</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-primary mr-4 mt-1">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Email Address</h4>
+                                    <p>info@dcareagency.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                            <h4 class="font-bold mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="social-icon w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-purple-800 transition" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-purple-800 transition" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-purple-800 transition" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-icon w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-purple-800 transition" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-8 mt-8">
+                        <h3 class="text-xl font-bold mb-4">Our Location</h3>
+                        <div class="h-64 rounded-lg overflow-hidden">
+                            <iframe 
+                                src="https://www.google.com/maps?q=123+Healthcare+Avenue,+Medical+District,+City,+State+12345&output=embed"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                class="w-full h-full rounded-lg">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-heartbeat mr-2"></i>
+                        D-care Agency
+                    </h3>
+                    <p class="mb-4">
+                        Providing compassionate healthcare services with a personal touch since 2010.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-secondary">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-secondary">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-secondary">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-secondary transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-secondary transition">About Us</a></li>
+                        <li><a href="#services" class="hover:text-secondary transition">Services</a></li>
+                        <li><a href="#testimonials" class="hover:text-secondary transition">Testimonials</a></li>
+                        <li><a href="#blog" class="hover:text-secondary transition">Blog</a></li>
+                        <li><a href="#contact" class="hover:text-secondary transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-secondary transition">Home Healthcare</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Physical Therapy</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Nursing Services</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Medical Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>123 Healthcare Avenue, Medical District, City, State 12345</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>(123) 456-7890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>info@dcareagency.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-purple-700 mt-10 pt-6 text-center">
+                <p>© 2025 D-care Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Sticky header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('bg-white', window.scrollY > 0);
+            header.classList.toggle('shadow-md', window.scrollY > 0);
+        });
+
+        window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const scrolled = window.scrollY > 0;
+        header.classList.toggle('bg-white', scrolled);
+        header.classList.toggle('shadow-md', scrolled);
+        navLinks.forEach(link => {
+            if (scrolled) {
+                link.classList.add('scrolled');
+            } else {
+                link.classList.remove('scrolled');
+            }
+        });
+    });
+// ...
+    </script>
+</body>
+</html>

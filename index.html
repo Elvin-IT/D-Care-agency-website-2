@@ -33,6 +33,23 @@
             background-position: center;
         }
         
+       h1.text-4xl.md\:text-6xl.font-bold.text-white.mb-6 {
+        margin-top: 20px; /* Adds a 20px margin to the top */
+        margin-bottom: 30px; /* Adds a 30px margin to the bottom */
+        margin-left: 62px; /* Adds a 10px margin to the left */
+        margin-right: 62px; /* Adds a 10px margin to the right */
+        }
+
+        .text-2xl.font-bold.text-primary {
+        color: white; /* Default color */
+        transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        .text-2xl.font-bold.text-primary.scrolled {
+        color: #6a0dad; /* Purple color (you can replace with your desired purple) */
+}
+
+
         .service-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -84,20 +101,19 @@
         }
 
         .nav-link.scrolled {
-        color: #6A0DAD !important;
-    }
+            color: #6A0DAD !important;
+        }
         
         .active::after {
             width: 100%;
         }
 
         .client-image {
-        width: 100px; /* Set the desired width */
-        height: 100px; /* Set the desired height */
-        border-radius: 50%; /* Makes the image round */
-        object-fit: cover; /* Ensures the image covers the area without distortion */
-}
-
+            width: 100px; /* Set the desired width */
+            height: 100px; /* Set the desired height */
+            border-radius: 50%; /* Makes the image round */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -110,17 +126,27 @@
                     D-care Agency
                 </span>
             </div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#home" class="nav-link font-medium active">Home</a>
-                <a href="#about" class="nav-link font-medium">About Us</a>
-                <a href="#services" class="nav-link font-medium">Services</a>
-                <a href="#testimonials" class="nav-link font-medium">Testimonials</a>
-                <a href="#blog" class="nav-link font-medium">Blog</a>
-                <a href="#contact" class="nav-link font-medium">Contact Us</a>
+            <nav id="nav-menu" class="hidden md:flex md:items-center md:space-x-8 absolute md:relative top-0 right-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none py-4 md:py-0">
+                <a href="#home" class="nav-link font-medium active block md:inline-block text-center py-2 md:py-0">Home</a>
+                <a href="#about" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">About Us</a>
+                <a href="#services" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">Services</a>
+                <a href="#testimonials" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">Testimonials</a>
+                <a href="#blog" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">Blog</a>
+                <a href="#contact" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">Contact Us</a>
             </nav>
-            <button class="md:hidden text-primary">
+            <button id="menu-toggle" class="md:hidden text-primary focus:outline-none">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md">
+            <a href="#home" class="block text-primary py-2 px-4 hover:bg-gray-200">Home</a>
+            <a href="#about" class="block text-primary py-2 px-4 hover:bg-gray-200">About Us</a>
+            <a href="#services" class="block text-primary py-2 px-4 hover:bg-gray-200">Services</a>
+            <a href="#testimonials" class="block text-primary py-2 px-4 hover:bg-gray-200">Testimonials</a>
+            <a href="#blog" class="block text-primary py-2 px-4 hover:bg-gray-200">Blog</a>
+            <a href="#contact" class="block text-primary py-2 px-4 hover:bg-gray-200">Contact Us</a>
         </div>
     </header>
 
@@ -159,7 +185,7 @@
                     </p>
                 </div>
                 <div class="md:w-1/2">
-                    <img src="img\1.jpg" alt="Community Healthcare" class="rounded-lg shadow-lg">
+                    <img src="img/1.jpg" alt="Community Healthcare" class="rounded-lg shadow-lg">
                 </div>
             </div>
         </div>
@@ -212,84 +238,83 @@
         </div>
     </section>
 
-   <!-- Testimonials Section -->
-<section id="testimonials" class="py-20 bg-secondary">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">What Our Clients Say</h2>
-            <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">What Our Clients Say</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic mb-6">
+                        "The care my mother received was exceptional. The nurses were professional, compassionate, and truly cared about her well-being. I couldn't be more grateful for their service."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="img/image1.jpg" alt="Image 1" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-sm">Family Member</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic mb-6">
+                        "After my surgery, the physical therapy team helped me regain my strength and mobility faster than I expected. Their expertise and encouragement made all the difference in my recovery."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="img/image2.jpg" alt="Image 2" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael Thompson</h4>
+                            <p class="text-sm">Patient</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic mb-6">
+                        "The home healthcare services provided by D-care Agency allowed my father to maintain his independence while receiving the medical attention he needed. The staff was always punctual and professional."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="img/image3.jpg" alt="Image 3" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">John Mo</h4>
+                            <p class="text-sm">Patient</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Testimonial 1 -->
-            <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
-                <div class="text-primary mb-4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="italic mb-6">
-                    "The care my mother received was exceptional. The nurses were professional, compassionate, and truly cared about her well-being. I couldn't be more grateful for their service."
-                </p>
-                <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                        <img src="img/image1.jpg" alt="Image 1" class="w-full h-full object-cover">
-                    </div>
-                    <div>
-                        <h4 class="font-bold">Sarah Johnson</h4>
-                        <p class="text-sm">Family Member</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Testimonial 2 -->
-            <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
-                <div class="text-primary mb-4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="italic mb-6">
-                    "After my surgery, the physical therapy team helped me regain my strength and mobility faster than I expected. Their expertise and encouragement made all the difference in my recovery."
-                </p>
-                <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                        <img src="img/image2.jpg" alt="Image 2" class="w-full h-full object-cover">
-                    </div>
-                    <div>
-                        <h4 class="font-bold">Michael Thompson</h4>
-                        <p class="text-sm">Patient</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Testimonial 3 -->
-            <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
-                <div class="text-primary mb-4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="italic mb-6">
-                    "The home healthcare services provided by D-care Agency allowed my father to maintain his independence while receiving the medical attention he needed. The staff was always punctual and professional."
-                </p>
-                <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                        <img src="img/image3.jpg" alt="Image 3" class="w-full h-full object-cover">
-                    </div>
-                    <div>
-                        <h4 class="font-bold">John Mo</h4>
-                        <p class="text-sm">Patient</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Blog Section -->
     <section id="blog" class="py-20 bg-white">
@@ -305,7 +330,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Blog Post 1 -->
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
-                    <img src="img\2.jpg" alt="Health Tips" class="w-full h-48 object-cover">
+                    <img src="img/2.jpg" alt="Health Tips" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">5 Essential Tips for Healthy Aging</h3>
                         <p class="mb-4">Discover simple yet effective ways to maintain your health and vitality as you age.</p>
@@ -318,7 +343,7 @@
                 
                 <!-- Blog Post 2 -->
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
-                    <img src="img\3.jpg" alt="Home Care" class="w-full h-48 object-cover">
+                    <img src="img/3.jpg" alt="Home Care" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Benefits of Home Healthcare Services</h3>
                         <p class="mb-4">Why home healthcare is becoming the preferred choice for many families.</p>
@@ -331,7 +356,7 @@
                 
                 <!-- Blog Post 3 -->
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
-                    <img src="img\4.jpg" alt="Recovery" class="w-full h-48 object-cover">
+                    <img src="img/4.jpg" alt="Recovery" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Post-Surgery Recovery: What to Expect</h3>
                         <p class="mb-4">A guide to understanding the recovery process after common surgical procedures.</p>
@@ -344,6 +369,7 @@
             </div>
         </div>
     </section>
+
     <!-- Newsletter Section -->
     <section class="py-20 bg-secondary">
         <div class="container mx-auto px-4">
@@ -362,6 +388,7 @@
             </div>
         </div>
     </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -533,6 +560,14 @@
     </footer>
 
     <script>
+        // JavaScript for toggling the mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -550,21 +585,33 @@
             header.classList.toggle('shadow-md', window.scrollY > 0);
         });
 
-        window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
+         window.addEventListener('scroll', function() {
         const navLinks = document.querySelectorAll('.nav-link');
-        const scrolled = window.scrollY > 0;
-        header.classList.toggle('bg-white', scrolled);
-        header.classList.toggle('shadow-md', scrolled);
-        navLinks.forEach(link => {
-            if (scrolled) {
+        const scrollPosition = window.scrollY;
+
+        // Check if the scroll position is greater than a certain value (e.g., 50px)
+        if (scrollPosition > 50) {
+            navLinks.forEach(link => {
                 link.classList.add('scrolled');
-            } else {
+            });
+        } else {
+            navLinks.forEach(link => {
                 link.classList.remove('scrolled');
-            }
-        });
+            });
+        }
     });
-// ...
+
+        window.addEventListener('scroll', function() {
+        const element = document.querySelector('.text-2xl.font-bold.text-primary'); // Select the parent element
+        const scrollPosition = window.scrollY;
+        const scrollThreshold = 200; // Adjust this value based on when you want the color to change
+
+        if (scrollPosition > scrollThreshold) {
+            element.classList.add('scrolled');
+        } else {
+            element.classList.remove('scrolled');
+        }
+        });
     </script>
 </body>
 </html>

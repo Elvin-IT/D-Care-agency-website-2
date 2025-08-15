@@ -66,7 +66,6 @@
         
         .nav-link {
             position: relative;
-            color: white;
         }
         
         .nav-link::after {
@@ -93,12 +92,26 @@
             width: 100%;
         }
 
-        .client-image {
-            width: 100px; /* Set the desired width */
-            height: 100px; /* Set the desired height */
-            border-radius: 50%; /* Makes the image round */
-            object-fit: cover; /* Ensures the image covers the area without distortion */
+        .scrolled-nav {
+            background-color: white !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
+        .scrolled-nav .nav-link {
+            color: #6A0DAD !important; /* primary color */
+        }
+
+        .scrolled-nav .nav-link::after {
+            background: #6A0DAD !important;
+        }
+
+        .scrolled-nav #site-logo,
+        .scrolled-nav #site-logo i,
+        .scrolled-nav #mobile-menu-toggle-icon {
+            color: #6A0DAD !important;
+        }
+
+        
             width: 100px; /* Set the desired width */
             height: 100px; /* Set the desired height */
             border-radius: 50%; /* Makes the image round */
@@ -108,43 +121,25 @@
 </head>
 <body class="text-gray-800">
     <!-- Header -->
-    <header class="fixed w-full bg-white shadow-md z-50">
+    <header class="fixed w-full bg-primary z-50 transition-colors duration-300" id="main-header">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="text-2xl font-bold text-primary">
+            <div class="text-2xl font-bold text-white" id="site-logo">
                 <span class="flex items-center">
-                    <i class="fas fa-heartbeat text-primary mr-2"></i>
+                    <i class="fas fa-heartbeat text-white mr-2"></i>
                     D-care Agency
                 </span>
             </div>
             <nav id="nav-menu" class="hidden md:flex md:items-center md:space-x-8 absolute md:relative top-0 right-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none py-4 md:py-0">
-                <a href="#home" class="nav-link font-medium active block md:inline-block text-center py-2 md:py-0">Home</a>
-                <a href="#about" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">About Us</a>
-                <a href="#services" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">Services</a>
-                <a href="#testimonials" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">Testimonials</a>
-                <a href="#blog" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">Blog</a>
-                <a href="#contact" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">Contact Us</a>
-            <nav id="nav-menu" class="hidden md:flex md:items-center md:space-x-8 absolute md:relative top-0 right-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none py-4 md:py-0">
-                <a href="#home" class="nav-link font-medium active block md:inline-block text-center py-2 md:py-0">Home</a>
-                <a href="#about" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">About Us</a>
-                <a href="#services" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">Services</a>
-                <a href="#testimonials" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">Testimonials</a>
-                <a href="#blog" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">Blog</a>
-                <a href="#contact" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0">Contact Us</a>
+                <a href="#home" class="nav-link font-medium active block md:inline-block text-center py-2 md:py-0 text-white">Home</a>
+                <a href="#about" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0 text-white">About Us</a>
+                <a href="#services" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0 text-white">Services</a>
+                <a href="#testimonials" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0 text-white">Testimonials</a>
+                <a href="#blog" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0 text-white">Blog</a>
+                <a href="#contact" class="nav-link font-medium block md:inline-block text-center py-2 md:py-0 text-white">Contact Us</a>
             </nav>
-            <button id="menu-toggle" class="md:hidden text-primary focus:outline-none">
-            <button id="menu-toggle" class="md:hidden text-primary focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl" id="mobile-menu-toggle-icon"></i>
             </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md">
-            <a href="#home" class="block text-primary py-2 px-4 hover:bg-gray-200">Home</a>
-            <a href="#about" class="block text-primary py-2 px-4 hover:bg-gray-200">About Us</a>
-            <a href="#services" class="block text-primary py-2 px-4 hover:bg-gray-200">Services</a>
-            <a href="#testimonials" class="block text-primary py-2 px-4 hover:bg-gray-200">Testimonials</a>
-            <a href="#blog" class="block text-primary py-2 px-4 hover:bg-gray-200">Blog</a>
-            <a href="#contact" class="block text-primary py-2 px-4 hover:bg-gray-200">Contact Us</a>
         </div>
 
         <!-- Mobile Menu -->
@@ -193,7 +188,6 @@
                     </p>
                 </div>
                 <div class="md:w-1/2">
-                    <img src="img/1.jpg" alt="Community Healthcare" class="rounded-lg shadow-lg">
                     <img src="img/1.jpg" alt="Community Healthcare" class="rounded-lg shadow-lg">
                 </div>
             </div>
@@ -340,7 +334,6 @@
                 <!-- Blog Post 1 -->
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
                     <img src="img/2.jpg" alt="Health Tips" class="w-full h-48 object-cover">
-                    <img src="img/2.jpg" alt="Health Tips" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">5 Essential Tips for Healthy Aging</h3>
                         <p class="mb-4">Discover simple yet effective ways to maintain your health and vitality as you age.</p>
@@ -354,7 +347,6 @@
                 <!-- Blog Post 2 -->
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
                     <img src="img/3.jpg" alt="Home Care" class="w-full h-48 object-cover">
-                    <img src="img/3.jpg" alt="Home Care" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Benefits of Home Healthcare Services</h3>
                         <p class="mb-4">Why home healthcare is becoming the preferred choice for many families.</p>
@@ -367,7 +359,6 @@
                 
                 <!-- Blog Post 3 -->
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
-                    <img src="img/4.jpg" alt="Recovery" class="w-full h-48 object-cover">
                     <img src="img/4.jpg" alt="Recovery" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Post-Surgery Recovery: What to Expect</h3>
@@ -490,7 +481,7 @@
                         <h3 class="text-xl font-bold mb-4">Our Location</h3>
                         <div class="h-64 rounded-lg overflow-hidden">
                             <iframe 
-                                src="https://www.google.com/maps?q=123+Healthcare+Avenue,+Medical+District,+City,+State+12345&output=embed"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.117199342552!2d3.336699614771179!3d6.63209799522799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b93f20c13f2f1%3A0x4c6b6e2a3f8b3e3c!2s123%20Healthcare%20Ave%2C%20Ikeja%2C%20Lagos!5e0!3m2!1sen!2sng!4v1662559799945!5m2!1sen!2sng"
                                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                                 class="w-full h-full rounded-lg">
                             </iframe>
@@ -575,3 +566,34 @@
 
     <script>
         // JavaScript for toggling the mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // JavaScript for scroll-based navbar changes
+        const mainHeader = document.getElementById('main-header');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const siteLogo = document.getElementById('site-logo');
+        const mobileMenuToggleIcon = document.getElementById('mobile-menu-toggle-icon');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) { // Adjust this value as needed
+                mainHeader.classList.add('scrolled-nav');
+                navLinks.forEach(link => {
+                    link.classList.add('scrolled');
+                });
+                siteLogo.classList.add('scrolled');
+                mobileMenuToggleIcon.classList.add('scrolled');
+            } else {
+                mainHeader.classList.remove('scrolled-nav');
+                navLinks.forEach(link => {
+                    link.classList.remove('scrolled');
+                });
+                siteLogo.classList.remove('scrolled');
+                mobileMenuToggleIcon.classList.remove('scrolled');
+            }
+        });
+    </script>
